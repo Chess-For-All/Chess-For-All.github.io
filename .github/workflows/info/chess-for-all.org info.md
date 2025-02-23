@@ -12,6 +12,7 @@
        <ul>
            <li><a href="index.html">Homepage</a></li>
            <li><a href="about.html">About</a></li>
+           <li><a href=".the-most-accurate-games .html">The most accurate games</a></li>
        </ul>
     </nav>
     <h1>Chess must be fair and available for everyone.</h1>
