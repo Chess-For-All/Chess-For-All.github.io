@@ -11,4 +11,4 @@ function click() {
 }
 
 const element = document.getElementById('like')
-element.style.text = 'like'
+element.style.text = 'liked'
