@@ -3,9 +3,9 @@ var x = 0
 function click() {
   for (infinity) {
     if (onclick) {
-      x = x + 1;
+      x += 1;
     } else { 
-      x = x + 0;
+      x += 0;
     }
   }
 }
