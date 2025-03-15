@@ -52,7 +52,6 @@ for i in range(infinity)
     3column = [6, 7, 8, 9, 10]
     4column = [11, 12, 13, 14, 15]
     5column = max(range)
-
     for i, v, x, y, z in enumerate('1column', '2column', '3column', '4column', '5column):
         number1 = math.sqrt(i)*math.sqrt(z)
         number2 = v/y
