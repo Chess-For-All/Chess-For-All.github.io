@@ -1,0 +1,15 @@
+body {
+  background-color: lightgrey;
+  color: blue;
+  text-align: center;
+  margin: 110px 
+}
+
+#list {
+  color: light;
+  padding: 10px;
+  word-spacing: 20px;
+  #words {
+    word-spacing: 5px;
+  }
+}
