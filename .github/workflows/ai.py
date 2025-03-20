@@ -1,10 +1,10 @@
 matrix = []
 
-def matrix_add(list):
-    matrix.insert(1, {list})
+def matrix_add(cols):
+    matrix.insert(1, cols)
 
-def imfr(times):
-    for i in range({times})
+def imfr(cols):
+    for i in range(cols)
         import numpy as np
         import pandas as pd
         import matplotlib.pyplot as plt
@@ -22,8 +22,8 @@ def iris():
 def traintest():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-def comp(times):
-    for i in range({times})
+def comp(cols):
+    for i in range(cols)
         model = keras.Sequential([
             layers.Dense(10, activation='relu', input_shape=(X_train.shape[1],)),
             layers.Dense(10, activation='relu'),
@@ -42,28 +42,28 @@ def copylot():
         answer = ask_copilot(user_question)
         print("Ответ", answer)
     
-def learn(times):
-    for i in range({times}):
+def learn(cols):
+    for i in range(cols):
         history = model.fit(X_train, y_train, epochs=100, validation_split=0.2)
     
 for i in range(infinity)
-    1column = min(range)
-    2column = [1, 2, 3, 4, 5]
-    3column = [6, 7, 8, 9, 10]
-    4column = [11, 12, 13, 14, 15]
-    5column = max(range)
-    for i, v, x, y, z in enumerate('1column', '2column', '3column', '4column', '5column):
+    col1 = min(range)
+    col2 = [1, 2, 3, 4, 5]
+    col3 = [6, 7, 8, 9, 10]
+    col4 = [11, 12, 13, 14, 15]
+    col5 = max(range)
+    for i, v, x, y, z in zip('col1', 'col2', 'col3', 'col4', 'col5'):
+         if y=0:
+                continue
         number1 = math.sqrt(i)*math.sqrt(z)
         number2 = v/y
-            if y=0:
-                continue
         number3 =  math.sin(x)                           
-        1.1column = ['number1', 'number2', 'number3']
-        matrix_add(1column,1.1column,2column,3column,4column,5column,)
+        col1.1 = ['number1', 'number2', 'number3']
+        matrix_add(col1, col1.1, col2, col3, col4, col5)
 
-        imfr((1column)+1) 
+        imfr((col1)+1) 
         iris()
         traintest()
-        comp(1.1column, 2column, 3column, 4column)
-        copylot(5column)
+        comp(col1.1, col2, col3, col4)
+        copylot(col5)
 
