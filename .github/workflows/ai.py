@@ -19,11 +19,17 @@ def iris():
     X = iris.data   
     y = iris.target  
 
-def traintest():
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+def traintest(n):
+    m = 1
+    while f > 0.9 :
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) = K
+        s = test(K)
+        f = accuracy_score(m, s)
+        if f < 0.9:
+            m += 1
 
 def comp(cols):
-    for i in range(cols)
+    for i in range(cols):
         model = keras.Sequential([
             layers.Dense(10, activation='relu', input_shape=(X_train.shape[1],)),
             layers.Dense(10, activation='relu'),
@@ -46,7 +52,7 @@ def learn(cols):
     for i in range(cols):
         history = model.fit(X_train, y_train, epochs=100, validation_split=0.2)
     
-for i in range(infinity)
+for i in range(infinity):
     col1 = min(range)
     col2 = [1, 2, 3, 4, 5]
     col3 = [6, 7, 8, 9, 10]
