@@ -102,7 +102,7 @@ for i in range(infinity):
     col4 = [11, 12, 13, 14, 15]
     col5 = max(range)
     for i, v, x, y, z in zip('col1', 'col2', 'col3', 'col4', 'col5'):
-         if y=0:
+         if y==0:
                 continue
         number1 = math.sqrt(i)*math.sqrt(z)
         number2 = v/y
