@@ -10,4 +10,5 @@ function click() {
       x += 0;
     }
 }
+click()
 }
