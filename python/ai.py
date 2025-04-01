@@ -3,6 +3,45 @@
 def matrix_add(cols):
     matrix.insert(1, cols)
 
+def test(per, iter):
+    for i in range(iter):
+        def create_questions(nr):
+            def ask_copilot2(nr):
+                import openai
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[{"role": "user", "content": nr}]
+          )
+                return response["choices"][0]["message"]["content"].strip()
+            if __name__ == "__main__":
+                user_question1 = input("Create 10 questions")
+                answer = ask_copilot2(user_question1)
+                return answer
+         
+        def ask_copilot(question):
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": question}],
+                learning_val=per
+          )
+            return response["choices"][0]["message"]["content"].strip()
+        if __name__ == "__main__":
+            user_question2 = input(answer)
+            answer1 = ask_copilot(user_question2)
+            return answer1
+
+        def check_copilot(question):
+            import openai  
+            def ask_copilot(question):
+                response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": question}]
+            )
+                return response["choices"][0]["message"]["content"].strip()
+        if __name__ == "__main__":
+            user_question3 = input(answer)
+            right_answer = check_copilot(user_question3)
+
 def imfr(cols):
     for i in range(cols):
         import numpy as np
@@ -40,8 +79,8 @@ def traintest():
     m = 1
     while f < 0.9 :
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) = K
-        s = test(K)
-        f = accuracy_score(m, s)
+        s = test(K, m)
+        f = accuracy_score(right_answer, answer)
         if f < 0.9:
             m += 1
 
@@ -49,8 +88,8 @@ def traintest2():
     m = 1
     while f < 0.9:
         x_train, x_test, T_train, T_test = train_test_split(x, T, test_size=0.2, random_state=42) = K
-        s = test(K)
-        f = accuracy_score(m, s)
+        s = test(K, m)
+        f = accuracy_score(right_answer, answer)
         if f < 0.9:
             m += 1
 
@@ -58,8 +97,8 @@ def traintest3():
     M = 1
     while F < 0.9:
         z_train, z_test, t_train, t_test = train_test_split(z, t, test_size=0.2, random_state=42) = k
-        S = test(k)
-        F = accuracy_score(m, s)
+        S = test(k, M)
+        F = accuracy_score(right_answer, answer)
         if F < 0.9:
             M += 1
 
@@ -120,7 +159,7 @@ for i in range(infinity):
             imfr2((col1)+1)
             tipstitanic()
             learn2(col1.1) 
-            learn(col2) 
+            learn3(col2) 
             traintest2()
             traintest3()
             comp(col3, col4)
