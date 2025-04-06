@@ -23,7 +23,7 @@ def test(per, iter):
                 model="gpt-3.5-turbo",
                 messages=[{"role": "user", "content": question}],
                 learning_val=per
-          )
+           )
             return response["choices"][0]["message"]["content"].strip()
         if __name__ == "__main__":
             user_question2 = input(answer)
@@ -34,13 +34,14 @@ def test(per, iter):
             import openai  
             def ask_copilot(question):
                 response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "user", "content": question}]
-            )
+                    model="gpt-3.5-turbo",
+                    messages=[{"role": "user", "content": question}]
+                )
                 return response["choices"][0]["message"]["content"].strip()
         if __name__ == "__main__":
             user_question3 = input(answer)
             right_answer = check_copilot(user_question3)
+            return right_answer
 
 def imfr(cols):
     for i in range(cols):
