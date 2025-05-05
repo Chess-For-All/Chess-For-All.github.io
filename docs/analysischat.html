@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis chat</title>
+    <style>
+      .holder-html-chat{ border: 1px solid #ccc;padding:10px;background-color: #fff;width: 600px;}
+      .html-chat-history{ max-width: 600px; overflow: auto;max-height: 900px; border: 1px solid #ccc;padding: 5px;}
+      .html-chat-js-name{ margin-top:10px; }
+      .html-chat-js-input{ max-width: 600px;max-height: 100px;width: 600px;margin-top:10px; }
+      .html-chat-js-button-holder{ margin-bottom: 0px;margin-top: 10px; }
+      .html-chat-js-button-holder input{ width: 220px; }
+      .html-chat-js-answer{ float:right; }
+      .html-chat-js-answer a{ color: #777;font-size: 12px; font-family: cursive;}
+      .html-chat-js-answer a:hover{ color: #338;font-size: 12px; font-family: cursive;}
+      .html-chat-msg{ margin: 0px; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Analysis chat</h1>
+        <p><i>You can ask Stockfish about position</i></p>
+        <script src="https://github.com/Chess-For-All/Chess-For-All.github.io/blob/main/docs/script_analysischat.py"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://comet-server.ru/CometServerApi.js"></script>
+        <script type="text/javascript" src="https://comet-server.ru/doc/html_chat.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://comet-server.ru/doc/html_chat.css"></link>
+        <div id="html-chat"></div>
+        <script>
+            $( document).ready(function() {
+            CometServer().start({dev_id: 15 }) 
+            htmljs_Chat_Init( $("#html-chat") )
+            });
+        </script>        
+        <article>
+            <a href="https://stockfishchess.org"><img src="https://stockfishchess.org/images/logo/icon_128x128@2x.webp"></a>
+        </article>
+        <footer>
+            <p>Sourses: <a href="https://stockfishchess.org">Stockfish</a></p>
+        </footer>
+    </main>    
+</body>
+</html>
