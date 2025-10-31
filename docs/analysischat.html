@@ -23,7 +23,10 @@
         <p><i>You can ask Stockfish about position</i></p>
         <div id="html-chat" style="background-color: blue; border-radius: 3px;">
             <div id="html-chat-history" style="background-color: light; border-radius: 3px;"></div>
-            <textarea id="mes" style="background-color: light; border-radius: 3px;"></textarea>
+            <lable for="mes"></lable>
+            <input id="mes" name="mes" style="background-color: light; border-radius: 3px;">
+            <label for="depth_id">Depth:</label>
+            <input id="depth_id" name="depth_id">
             <button type="submit" onclick="submit_for_analysis()">Submit for analysis</button>
         </div>
         <script>
@@ -33,24 +36,63 @@
             });
         </script>
         <script>
-            import { Stockfish } from 'stockfish';
+            async function analyzePosition(fen, depth = 15) {
+            try {
+                const engine = new Stockfish();
+                await engine.init();
+                await engine.sendCommand(`position fen ${fen}`);
+                await engine.sendCommand(`go depth ${depth}`);
+                let bestMove = null;
+                let evaluation = null;
 
-            function sf_accept(var fen) {
-                var response = stockfish.ChatCompletion.create{
-                    var model = "stockfish";
-                    var messages= [{"role": "user", "content": fen}];
+                engine.on('message', (message) => {
+                    if (message.includes('bestmove')) {
+                        const parts = message.split(' ');
+                        bestMove = parts[1];
+                    }
+                    if (message.includes('score cp')) {
+                        const cpValue = parseInt(message.split('cp ')[1].split(' ')[0]);
+                        evaluation = cpValue / 100;
+                    }
+                    if (message.includes('score mate')) {
+                        const mateMoves = parseInt(message.split('mate ')[1].split(' ')[0]);
+                        evaluation = `мат в ${mateMoves} ходов`;
+                    }
+                });
+
+                await new Promise((resolve) => {
+                    engine.on('end', () => {
+                        engine.quit();
+                        resolve();
+                    });
+                });
+            } catch (error) {
+                alert('Error:', error);
+                return null;
                 }
-                return response;
             }
+
+            async function format(fen, depth = 40) {
+                const result = await analyzePosition(fen, depth);
+
+                if (result) {
+                    let answer = `
+                        FEN: ${result.fen}
+                        Best move: ${result.bestMove}
+                        Eval: ${result.evaluation}
+                        `
+                    return {answer, result}
+                }
+            };
 
             function submit_for_analysis() {            
                 var history = document.GetElementById("html-chat-history");
                 history.innerHTML = ""
-                var text = document.GetElementById("mes")
-                history.innerHTML += `<div><b>Me:</b> ${text}</div>`;
-                let user_question = text;
-                let answer = sf_accept(user_question);
-                history.innerHTML += `<div><b>SF:</b> ${answer}</div>`;
+                var fen = document.GetElementById("mes")
+                var depth = document.GetElementById("depth_id")
+                history.innerHTML += `<div><b>Me:</b> FEN: ${fen.value}, Depth: ${depth.value}</div>`;
+                const gift = await format(fen.value, depth.value)
+                history.innerHTML += `<div><b>SF:</b> ${gift.answer}</div>`;
             }
         </script>
         <article>
