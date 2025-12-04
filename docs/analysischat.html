@@ -90,7 +90,7 @@
                 history.innerHTML = ""
                 var fen = document.GetElementById("mes")
                 var depth = document.GetElementById("depth_id")
-                history.innerHTML += `<div><b>Me:</b> FEN: ${fen.value}, Depth: ${depth.value}</div>`;
+                history.innerHTML += `<div><b>Me:</b> FEN: ${toString(fen.value)}, Depth: ${depth.value}</div>`;
                 const gift = await format(fen.value, depth.value)
                 history.innerHTML += `<div><b>SF:</b> ${gift.answer}</div>`;
             }
