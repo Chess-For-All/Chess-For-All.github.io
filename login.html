@@ -39,5 +39,18 @@ body {
     </form>
     <p>Please read our <a href="https://github.com/mihail0011/ChessForAll/blob/main/SECURITY.md">Privacy Policy</a>.</p>
     <script src="https://github.com/Chess-For-All/Chess-For-All.github.io/blob/main/docs/send.js"></script>
+    <script>
+        // временно
+        function sendForm(){
+            const keyBox = document.search.key;
+            const val = keyBox.value;
+            if(val.length<3){
+                alert("Недопустимая длина строки");
+                e.preventDefault();
+            } else alert("Отправка разрешена");
+        }
+        const sendButton = document.search.send;
+        sendButton.addEventListener("click", sendForm);
+    </script>
 </body>
 </html>
