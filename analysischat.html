@@ -37,11 +37,15 @@
         <p><i>You can ask Stockfish about position</i></p>
         <div id="html-chat">
             <div id="html-chat-history"></div>
+            <div>
             <lable for="mes">FEN:</lable>
             <input id="mes" name="mes">
+            </div>
+            <div>
             <label for="depth_id">Depth:</label>
             <input id="depth_id" name="depth_id">
-            <button type="submit" onclick="submit_for_analysis()">Submit for analysis</button>
+            </div>
+            <div><button type="submit" id="button1">Submit for analysis</button></div>
         </div>
         <script>
             $( document).ready(function() {
@@ -108,6 +112,7 @@
                 const gift = await format(fen.value, depth.value)
                 history.innerHTML += `<div><b>SF:</b> ${gift.answer}</div>`;
             }
+            document.getElementById("button1").addEventListener(() => {submit_for_analysis()})
         </script>
         <article>
             <a href="https://stockfishchess.org"><img src="https://stockfishchess.org/images/logo/icon_128x128@2x.webp" width="20px" height="20px"></a>
