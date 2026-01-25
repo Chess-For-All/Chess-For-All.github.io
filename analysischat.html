@@ -15,16 +15,19 @@
           border-radius: 5px;
           cursor: pointer;
       }
+      #html-chat {background-color: light; border-radius: 3px;}
+      #html-chat-history {background-color: light; border-radius: 3px;}
+      #mes {background-color: light; border-radius: 3px;}
     </style>
 </head>
 <body>
     <main>
         <h1>Analysis chat</h1>
         <p><i>You can ask Stockfish about position</i></p>
-        <div id="html-chat" style="background-color: blue; border-radius: 3px;">
-            <div id="html-chat-history" style="background-color: light; border-radius: 3px;"></div>
-            <lable for="mes"></lable>
-            <input id="mes" name="mes" style="background-color: light; border-radius: 3px;">
+        <div id="html-chat">
+            <div id="html-chat-history"></div>
+            <lable for="mes">FEN:</lable>
+            <input id="mes" name="mes">
             <label for="depth_id">Depth:</label>
             <input id="depth_id" name="depth_id">
             <button type="submit" onclick="submit_for_analysis()">Submit for analysis</button>
@@ -96,7 +99,7 @@
             }
         </script>
         <article>
-            <a href="https://stockfishchess.org"><img src="https://stockfishchess.org/images/logo/icon_128x128@2x.webp"></a>
+            <a href="https://stockfishchess.org"><img src="https://stockfishchess.org/images/logo/icon_128x128@2x.webp" width="20px" height="20px"></a>
         </article>
     </main>
         <footer>
