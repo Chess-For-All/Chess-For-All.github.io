@@ -72,6 +72,10 @@ class Chessboard {
     setpieces(this.board);
   };
   setboard(obj) {
+    for (let row of this.board) {
+    for (let f of row) {
     obj.getElementById(`${f.coords[0]}.${f.coords[1]}`).innerHTML = `<img src="${getPieceImageSource(f.onstayed)}"></img>`;
+    };
+    };
   };
 };
