@@ -48,10 +48,30 @@ function setpieces(board) {
   board[0][7].onstayed = "r";
 };
 
+function getPieceImageSource(piece) {
+    switch (piece) {
+        case 'R': return 'assets/black_rook.png';
+        case 'N': return 'assets/black_knight.png';
+        case 'B': return 'assets/black_bishop.png';
+        case 'Q': return 'assets/black_queen.png';
+        case 'K': return 'assets/black_king.png';
+        case 'P': return 'assets/black_pawn.png';
+        case 'r': return 'assets/white_rook.png';
+        case 'n': return 'assets/white_knight.png';
+        case 'b': return 'assets/white_bishop.png';
+        case 'q': return 'assets/white_queen.png';
+        case 'k': return 'assets/white_king.png';
+        case 'p': return 'assets/white_pawn.png';
+    }
+}
+
 class Chessboard {
   constructor() {
     this.board = [];
     fullfillboard(this);
-    setpieces(this.board)
+    setpieces(this.board);
+  };
+  setboard(obj) {
+    obj.getElementById(`${f.}`)
   };
 };
